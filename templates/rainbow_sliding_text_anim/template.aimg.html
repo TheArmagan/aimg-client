@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Text</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      --width: 200px;
+      
+      width: var(--width);
+      height: 35px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      contain: content;
+
+      --hue: 0;
+      --offset: 0%;
+
+      .text {
+        color: hsl(var(--hue), 100%, 50%);
+        margin-left: calc(var(--offset) - 100%);
+        min-width: var(--width);
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+        gap: 0px;
+
+        span {
+          line-height: 1;
+        }
+
+        .time {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      &.bg {
+        background-color: hsl(calc(var(--hue) * -1), 100%, 50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card <%= it.bg ? 'bg' : '' %>" style="--width: <%= it.width %>px">
+    <div class="text">
+      <span class="content"><%= it.text %></span>
+      <span class="time"><%= Date.now() %></span>
+    </div>
+  </div>
+</body>
+</html>

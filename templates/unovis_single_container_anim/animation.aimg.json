@@ -1,0 +1,32 @@
+{
+  "frames": 60,
+  "frameRate": 30,
+  "loop": false,
+  "list": [
+    {
+      "from": {
+        "value": 0
+      },
+      "to": {
+        "value": 1
+      },
+      "ease": "bounce.out",
+      "updaters": [
+        {
+          "value": {
+            "$$": "$.value"
+          },
+          "setters": [
+            {
+              "type": "Unovis:Data",
+              "selector": ".singleContainer",
+              "value": {
+                "$$": "Array(4).fill($.value).map((d, i) => (d + i + 0.025))"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

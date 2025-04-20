@@ -33,13 +33,14 @@ export type RestSession = {
     instance: RestSessionInstance;
   };
   last_activity_at: number;
+  instance_hash: string;
   created_at: number;
   is_busy: boolean;
   server_url: string;
 }
 
 export type RestRenderSessionOptions = {
-  sesion_id: string;
+  session_id: string;
   html: string;
   config: {
     data: Record<string, any>;

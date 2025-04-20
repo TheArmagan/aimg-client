@@ -1,0 +1,32 @@
+{
+  "user": {
+    "name": "Armagan",
+    "displayName": "Armagan | 21",
+    "avatarUrl": "https://i.imgur.com/7Wgsjh6.png",
+    "avatarColor": "#ffffff"
+  },
+  "levels": [
+    {
+      "title": "Text Channels",
+      "max": 100,
+      "current": 58,
+      "currentLevel": 12,
+      "colors": [
+        "#2a3073",
+        "#5865f2"
+      ],
+      "rank": 6
+    },
+    {
+      "title": "Voice Channels",
+      "max": 100,
+      "current": 32,
+      "currentLevel": 3,
+      "colors": [
+        "#114e2a",
+        "#23a559"
+      ],
+      "rank": 14
+    }
+  ]
+}

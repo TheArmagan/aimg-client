@@ -1,8 +1,14 @@
 {
 	"name": "aimg.js",
-	"dependencies": {},
+	"types": "./dist/index.d.ts",
+	"main": "./dist/index.js",
+	"dependencies": {
+		"fast-json-stable-stringify": "^2.1.0"
+	},
 	"author": "Kıraç Armağan Önal",
-	"scripts": {},
+	"scripts": {
+		"build": "tsc"
+	},
 	"devDependencies": {
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2"

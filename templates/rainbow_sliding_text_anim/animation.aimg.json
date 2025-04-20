@@ -1,0 +1,59 @@
+{
+  "frames": 90,
+  "frameRate": 30,
+  "loop": true,
+  "list": [
+    {
+      "from": {
+        "hue": 0,
+        "offset": 0,
+        "progress": 0
+      },
+      "to": {
+        "hue": 360,
+        "offset": 200,
+        "progress": 1
+      },
+      "ease": "linear",
+      "updaters": [
+        {
+          "value": {
+            "$$": "$.hue"
+          },
+          "setters": [
+            {
+              "type": "Style",
+              "selector": ".card",
+              "key": "--hue",
+              "value": {
+                "$$": "$.value"
+              }
+            },
+            {
+              "type": "Style",
+              "selector": ".card",
+              "key": "--offset",
+              "value": {
+                "$$": "`${$.values.offset}%`"
+              }
+            },
+            {
+              "type": "Text",
+              "selector": ".text .content",
+              "value": {
+                "$$": "`${it.text} (${~~($.values.progress * 100)}%)`"
+              }
+            },
+            {
+              "type": "Text",
+              "selector": ".text .time",
+              "value": {
+                "$$": "Date.now()"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

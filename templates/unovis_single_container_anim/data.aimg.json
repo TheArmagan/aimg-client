@@ -1,0 +1,21 @@
+{
+  "config": {
+    "singleContainer": {
+      "component": {
+        "$donut": {
+          "arcWidth": 0,
+          "value": {
+            "$$": "(d) => d"
+          }
+        }
+      }
+    }
+  },
+  "data": [
+    11,
+    18,
+    3,
+    1,
+    17
+  ]
+}
