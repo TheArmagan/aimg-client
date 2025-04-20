@@ -13,5 +13,21 @@
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2"
 	},
-	"version": "0.0.1"
+	"version": "0.0.1",
+	"keywords": [
+		"aimg",
+		"api",
+		"client",
+		"image",
+		"generation",
+		"render",
+		"html",
+		"template",
+		"dynamic",
+		"png",
+		"gif",
+		"node",
+		"nodejs",
+		"sdk"
+	]
 }
