@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      background-color: #313338;
+      /* border-radius: 8px; */
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      & > .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        background-color: rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding: 16px;
+
+        & > .image {
+          width: 64px;
+          height: 64px;
+          border-radius: 8px;
+          box-shadow: 0 0 8px var(--color);
+        }
+
+        & > .name-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          & > .name {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+          }
+
+          & > .subtext {
+            font-size: 12px;
+            font-weight: 300;
+            opacity: 0.7;
+            text-align: center;
+          }
+        }
+      }
+
+      & > .levels {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-right: 16px;
+
+        .level {
+          width: 300px;
+          max-width: 300px;
+          min-width: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          background-color: rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          padding: 8px;
+          
+          & > .info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & > .general {
+              display: flex;
+              gap: 8px;
+              align-items: center;
+
+              & > .title {
+                font-size: 16px;
+                font-weight: 600;
+              }
+
+              .xp {
+                font-size: 12px;
+                font-weight: 400;
+                opacity: 0.9;
+              }
+            }
+
+            & > .rank {
+              font-weight: 600;
+            }
+          }
+
+          & > .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: calc(100% - 16px);
+
+            .number {
+              font-size: 14px;
+              font-weight: 400;
+              opacity: 0.9;
+              width: 32px;
+              text-align: center;
+            }
+
+            & > .progress-wrapper {
+              display: flex;
+              border-radius: 999px;
+              background-color: rgba(0, 0, 0, 0.1);
+              outline: 2px solid var(--color2);
+              width: 100%;
+
+              & > .progress {
+                width: var(--progress);
+                border-radius: 999px;
+                background-image: linear-gradient(90deg, var(--color2), var(--color1), var(--color2), var(--color1), var(--color2));
+                background-size: 200% 100%;
+                background-position: var(--gradient-animation-progress) 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 12px;
+                height: 18px;
+                padding: 0 8px;
+                min-width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="user">
+      <img src="<%= it.user.avatarUrl %>" style="--color: <%= it.user.avatarColor %>" class="image">
+      <div class="name-container">
+        <div class="name">
+          <%= it.user.name %>
+        </div>
+        <% if (it.user.name !== it.user.displayName) { %>
+          <div class="subtext">
+            <%= it.user.displayName %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="levels">
+      <% it.levels.forEach((level) => { %>
+        <div class="level" id="<%= level.id %>" style="--color1: <%= level.colors[0] %>; --color2: <%= level.colors[1] %>; ">
+          <div class="info">
+            <div class="general">
+              <div class="title">
+                <%= level.title %>
+              </div>
+              <div class="xp">
+                XP: <%= level.current %> / <%= level.max %>
+              </div>
+            </div>
+            <div class="rank">
+              #<%= level.rank %>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="number">
+              <%= level.currentLevel %>lvl
+            </div>
+            <div class="progress-wrapper">
+              <div class="progress" style="--progress: <%= ((level.current/level.max) * 100).toFixed(2) %>%; --gradient-animation-progress: 0%;">
+                <%= Math.floor((level.current/level.max) * 100) %>%
+              </div>
+            </div>
+            <div class="number">
+              <%= level.currentLevel + 1 %>lvl
+            </div>
+          </div> 
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

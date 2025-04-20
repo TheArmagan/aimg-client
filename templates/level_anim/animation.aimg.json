@@ -1,0 +1,42 @@
+{
+  "frames": 30,
+  "frameRate": 30,
+  "loop": true,
+  "list": [
+    {
+      "from": {
+        "value": 0
+      },
+      "to": {
+        "value": 200
+      },
+      "duration": 1,
+      "ease": "linear",
+      "updaters": [
+        {
+          "value": {
+            "$$": "Math.floor($.value)"
+          },
+          "setters": [
+            {
+              "type": "Style",
+              "selector": "#metin .progress",
+              "key": "--gradient-animation-progress",
+              "value": {
+                "$$": "`${$.value}%`"
+              }
+            },
+            {
+              "type": "Style",
+              "selector": "#ses .progress",
+              "key": "--gradient-animation-progress",
+              "value": {
+                "$$": "`${$.value}%`"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

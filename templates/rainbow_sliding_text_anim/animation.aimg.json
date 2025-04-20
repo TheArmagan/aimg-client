@@ -17,16 +17,13 @@
       "ease": "linear",
       "updaters": [
         {
-          "value": {
-            "$$": "$.hue"
-          },
           "setters": [
             {
               "type": "Style",
               "selector": ".card",
               "key": "--hue",
               "value": {
-                "$$": "$.value"
+                "$$": "$.values.hue"
               }
             },
             {

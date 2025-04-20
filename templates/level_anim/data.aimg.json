@@ -1,0 +1,34 @@
+{
+  "user": {
+    "name": "Armagan",
+    "displayName": "✧ Armağan | 18",
+    "avatarUrl": "https://cdn.discordapp.com/avatars/707309693449535599/471d0f64f2b8c58b66d36111734ffd33.png?size=512",
+    "avatarColor": "#ff00ff"
+  },
+  "levels": [
+    {
+      "title": "Metin Kanalları",
+      "max": 100,
+      "current": 58,
+      "currentLevel": 12,
+      "colors": [
+        "#4651c9",
+        "#5865f2"
+      ],
+      "rank": 6,
+      "id": "metin"
+    },
+    {
+      "title": "Ses Kanalları",
+      "max": 100,
+      "current": 32,
+      "currentLevel": 3,
+      "colors": [
+        "#3ed67d",
+        "#23a559"
+      ],
+      "rank": 14,
+      "id": "ses"
+    }
+  ]
+}
