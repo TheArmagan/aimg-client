@@ -1,0 +1,9 @@
+{
+	"name": "aimg.js",
+	"dependencies": {},
+	"scripts": {},
+	"devDependencies": {
+		"@types/node": "^22.13.17",
+		"typescript": "^5.8.2"
+	}
+}
