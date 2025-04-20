@@ -1,6 +1,7 @@
 {
 	"name": "aimg.js",
 	"dependencies": {},
+	"author": "Kıraç Armağan Önal",
 	"scripts": {},
 	"devDependencies": {
 		"@types/node": "^22.13.17",
