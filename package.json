@@ -1,5 +1,6 @@
 {
 	"name": "aimg.js",
+	"description": "Official AIMG API client for Node.js. Allows you to generate dynamic images (PNG/GIF) using HTML templates. ✨",
 	"types": "./dist/index.d.ts",
 	"main": "./dist/index.js",
 	"dependencies": {
