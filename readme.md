@@ -32,6 +32,8 @@ const client = new AIMGClient({
 
 Renders an image using the specified template name. It reads the files (`template.aimg.html`, `session.aimg.json`, `data.aimg.json`, `animation.aimg.json`) from the template folder and sends them to the AIMG API.
 
+You can see example templates in the [templates](https://github.com/TheArmagan/aimg-client/tree/main/templates) folder.
+
 ```javascript
 // filepath: exampleRenderTemplate.js
 const { AIMGClient } = require("aimg.js");
