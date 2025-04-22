@@ -16,6 +16,9 @@ export type RestSessionInstance = {
           ease: string;
         }[]
       }
+    } | {
+      name: "GoogleFonts",
+      config: string[]
     }
   )[]
 }
