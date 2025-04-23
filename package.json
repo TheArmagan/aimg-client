@@ -14,7 +14,7 @@
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2"
 	},
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"keywords": [
 		"aimg",
 		"api",

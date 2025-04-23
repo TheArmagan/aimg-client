@@ -14,5 +14,4 @@ const renderer = new AIMGClient({
   console.log(res);
   fs.writeFileSync(res.filaname, res.buffer);
   console.log(`Image saved to ${res.filaname}`);
-  process.exit(0);
 })();

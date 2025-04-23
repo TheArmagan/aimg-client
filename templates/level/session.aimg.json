@@ -1,3 +1,11 @@
 {
-  "type": "NoScriptStatic"
+  "type": "NoScriptStatic",
+  "profiles": [
+    {
+      "name": "GoogleFonts",
+      "config": [
+        "Poppins"
+      ]
+    }
+  ]
 }

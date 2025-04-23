@@ -42,9 +42,10 @@ export class Rest {
 
     const controller = new AbortController();
     const signal = controller.signal;
+    let timeout: any = null;
 
     if (options.timeout) {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         controller.abort(new Error('Request timed out'));
       }, options.timeout);
     }
@@ -62,6 +63,9 @@ export class Rest {
           return req.json();
       }
     })();
+
+    if (timeout) clearTimeout(timeout);
+
     return {
       data: res,
       ok: req.ok,
